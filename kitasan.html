@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitasan-Black</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <img src="Kitasan-black-supoca.png" alt="" id="Kitasan-Black">
+    <audio id="AudioPlayer">
+        <source src="harikitte-ikou-kitasan-black.mp3">
+    </audio>
+    <h3 id="score">Score : -</h3>
+</body>
+</html>
+
+<script>
+    const image = document.getElementById('Kitasan-Black');
+    const AudioPlayer = document.getElementById('AudioPlayer');
+    let score = document.getElementById('score');
+    let i = 0
+
+    function AudioPlay() {
+        AudioPlayer.currentTime = 0.2;
+        AudioPlayer.play();
+        i = i+1;
+        score.textContent = "Score : "+i;
+    }
+
+    image.addEventListener('click', AudioPlay);
+</script>
