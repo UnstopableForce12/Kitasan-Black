@@ -8,17 +8,33 @@
         *{
             margin: 0;
             padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
         }
 
         body {
             height: 100vh;
             display: flex;
             justify-content: center;
+            background-color: orange;
+        }
+
+        .intro {
+            animation: fade-in ease 1s;
+        }
+
+        @keyframes fade-in {
+            from{
+                opacity: 0;
+            }
+            to{
+                opacity: 1;
+            }
         }
     </style>
 </head>
 <body>
-    <img src="Kitasan-black-supoca.png" alt="" id="Kitasan-Black">
+    <img src="Kitasan-black-supoca.png" alt="" id="Kitasan-Black" class="intro">
     <audio id="AudioPlayer">
         <source src="harikitte-ikou-kitasan-black.mp3">
     </audio>
@@ -33,6 +49,9 @@
     let i = 0
 
     function AudioPlay() {
+        image.classList.remove('intro');
+        void image.offsetWidth;
+        image.classList.add('intro');
         AudioPlayer.currentTime = 0.2;
         AudioPlayer.play();
         i = i+1;
